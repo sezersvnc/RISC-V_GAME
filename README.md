@@ -27,5 +27,6 @@ Run the game via terminal or your favorite IDE:
 Bash
 python main.py  
 
-👨‍💻 Developer
+👨‍💻 Developers  
+
 Arda Hacımusalar/Sezer Sevinç/Yiğit Mert Çetinkaya/Zeliha Ülger/Erva Nur Temel- Computer Engineering Student @ Düzce University
