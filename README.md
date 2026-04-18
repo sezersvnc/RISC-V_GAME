@@ -4,7 +4,8 @@ This project is an interactive, educational map-conquest game developed to teach
 
 ## 🚀 Features
 * **Interactive Gameplay:** Conquer territories on a map by correctly answering technical questions about RISC-V.
-* **3 Difficulty Levels:** * **Easy:** Map of Turkey (7 Regions) - Basic RV32I concepts.
+* **3 Difficulty Levels:** 
+  * **Easy:** Map of Turkey (7 Regions) - Basic RV32I concepts.
   * **Medium:** Map of Düzce (8 Districts) - Memory, endianness, and instruction formats.
   * **Hard:** Map of Marmara (11 Provinces) - Pipelining, privileged architecture, and RV64I/RVV extensions.
 * **Visual Feedback:** Real-time color updates for territories (Red: Unconquered, Green: Conquered, Yellow: Hover/Target).
