@@ -7,7 +7,7 @@ pygame.init()
 
 # Color Palette
 BG_COLOR = (30, 30, 40)
-QUESTION_BG = (15, 25, 45) # New solid background for questions
+QUESTION_BG = (15, 25, 45) 
 WHITE = (240, 240, 240)
 GREEN = (50, 200, 80)
 RED = (220, 50, 50)
@@ -188,7 +188,7 @@ while running:
         if active_map_img:
             screen.blit(active_map_img, (0, 0))
         
-        reset_rect = pygame.Rect(720, 20, 160, 40) # Slightly widened for English text
+        reset_rect = pygame.Rect(720, 20, 160, 40) 
         r_color = RED if reset_rect.collidepoint(mouse_pos) else GRAY
         pygame.draw.rect(screen, r_color, reset_rect, border_radius=8)
         pygame.draw.rect(screen, WHITE, reset_rect, 2, border_radius=8)
