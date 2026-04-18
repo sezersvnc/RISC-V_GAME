@@ -25,11 +25,7 @@ Place the required background map images (harita.png, duzce.png, marmara.png) in
 Run the game via terminal or your favorite IDE:
 
 Bash
-python main.py
+python main.py  
+
 👨‍💻 Developer
 Arda Hacımusalar/Sezer Sevinç/Yiğit Mert Çetinkaya/Zeliha Ülger/Erva Nur Temel- Computer Engineering Student @ Düzce University
-
-
-***
-
-**Not:** GitHub'a yükleyeceksen bu metni doğrudan `README.md` adında bir dosya oluşt
