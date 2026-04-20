@@ -1,3 +1,4 @@
+#IMPORTS & INITIALIZATION(Required libraries are imported and the Pygame engine is initialized.)
 import pygame
 import sys
 import os
@@ -5,7 +6,7 @@ import os
 # Pygame Initialization
 pygame.init()
 
-# Color Palette
+# COLOR PALETTE(All colors used in the game in RGB format are configured here.)
 BG_COLOR = (30, 30, 40)
 QUESTION_BG = (15, 25, 45) 
 WHITE = (240, 240, 240)
@@ -17,12 +18,12 @@ BLUE = (70, 130, 200)
 BLACK = (0, 0, 0)
 DARK_GRAY = (40, 40, 50)
 
-# Screen Settings
+# SCREEN SETTINGS (The window size and title are configured.)
 WIDTH, HEIGHT = 900, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Conquest: RISC-V Edition")
 
-# Map Loading Function
+# MAP LOADING FUNCTION (Map background images are loaded and scaled according to the screen size.)
 def load_image(file_name):
     try:
         img = pygame.image.load(file_name)
@@ -37,13 +38,15 @@ maps = {
     "hard": load_image("marmara.png")
 }
 
-# Fonts
+# FONTS (Text fonts of various sizes used in the game are defined here.)
 winner_font=pygame.font.SysFont("Arial",25,bold=True)
 title_font = pygame.font.SysFont("Arial", 40, bold=True)
 question_font = pygame.font.SysFont("Arial", 24)
 button_font = pygame.font.SysFont("Arial", 26, bold=True)
 small_font = pygame.font.SysFont("Arial", 18, bold=True)
 option_font = pygame.font.SysFont("Arial", 22, bold=True)
+
+# GAME DATA (Map targets, coordinates, and questions are defined for Easy, Medium, and Hard levels.)
 
 # LEVEL 1: EASY (TURKEY)
 data_easy = {
@@ -83,7 +86,7 @@ data_hard = {
     "Çanakkale": {"pos": (220, 390), "conquered": False, "question": "In the RV 'F' (Single-Precision Float) extension, how many f registers are there?", "options": {"A": "16", "B": "32", "C": "64"}, "answer": "B"}
 }
 
-# Game Variables
+# GAME VARIABLES & FUNCTIONS (Variables tracking the game state and helper functions for resetting/drawing text are set here.)
 state = "MENU" 
 current_regions = {}
 active_region = None
@@ -119,6 +122,7 @@ def draw_text(text, font, color, x, y, center=False, bg=True, bg_alpha=170):
 clock = pygame.time.Clock()
 running = True
 
+# MAIN GAME LOOP - INTERACTIONS (Listens for user mouse clicks, menu selections, and quiz answers.)
 while running:
     mouse_pos = pygame.mouse.get_pos()
     
@@ -164,7 +168,7 @@ while running:
                     state = "RESULT"
                     result_time = pygame.time.get_ticks()
 
-    # --- SCREEN DRAWING ---
+    # SCREEN RENDERING (Draws graphics and text based on the current game state: Menu, Map, Question, or Result.)
     if state == "MENU":
         screen.fill(BG_COLOR)
         draw_text("KNOW AND CONQUER: RISC-V", title_font, YELLOW, WIDTH//2, 100, center=True, bg=False)
@@ -235,11 +239,9 @@ while running:
             screen.blit(option_text, (230, y + 17))
 
     elif state == "RESULT":
-        # Green background for correct, Red for wrong
         bg_color_result = GREEN if is_correct else RED
         screen.fill(bg_color_result)
         
-        # White text in center
         draw_text(result_message, title_font, WHITE, WIDTH//2, HEIGHT//2, center=True, bg=False)
         
         if pygame.time.get_ticks() - result_time > 2000: # 2 seconds delay
@@ -248,5 +250,6 @@ while running:
     pygame.display.flip()
     clock.tick(60)
 
+# EXIT (Safely terminates the Pygame engine and the program when the loop breaks.)
 pygame.quit()
 sys.exit()
